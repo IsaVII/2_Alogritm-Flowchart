@@ -199,18 +199,28 @@ flowchart TD
 
     B --> C{Park-Hours <= 1?}:::dec
     C -- Yes --> D[Final Fee=0 kr]:::proc
-    D-->F[/Output: Final Fee/]:::io
-    F-->End
+    D-->Out
+   
 
     C -- No --> G{Park-Hours <= 3?}:::dec
     G -- Yes --> H[Final Fee=50 kr]:::proc
-    H-->F
+    H-->LC
 
-    G -- No --> I{Park-Hours > 3?}:::dec
-    I -- Yes --> J[Final Fee=
+    G -- No --> J[Final Fee=
     50 kr + /Hours-3/ * 40 kr]:::proc
     J--> K{Final Fee > Daily Rate /250/}:::dec
+    K -- No --> LC
+    
+    K -- Yes --> L[Final Fee = Daily Rate]:::proc  
+    L --> LC[/Input Loyalty/]:::io
+    LC --> M{Loyalty?}:::dec
+    M-- Yes --> N[20% Discount]:::proc  
 
+     N --> Out[/Output Final Fee/]:::io
+     M -- No --> Out
+     Out --> End
+
+ 
     End([End]):::term 
   
   classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
