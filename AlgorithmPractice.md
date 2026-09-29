@@ -39,6 +39,7 @@ Sum = 0
 For 5 times
   Input Number 
   Sum += Number
+End For
 
 Display Sum
 End
