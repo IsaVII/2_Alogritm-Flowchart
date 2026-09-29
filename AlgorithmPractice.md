@@ -36,7 +36,7 @@ Displays the final result.
 Start
 
 Sum = 0
-While NumberCount < 5
+For 5 times
   Input Number 
   Sum += Number
 
