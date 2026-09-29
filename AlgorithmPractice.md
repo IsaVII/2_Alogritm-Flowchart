@@ -12,7 +12,8 @@ If they are equal, display "Both numbers are equal."
 
 ```
 Start 
-Input A, B
+Input A
+Input B
 If A > B  
     Display A
 Else if A < B 
@@ -33,11 +34,13 @@ Displays the final result.
 
 ```
 Start
-Input Numbers[]
-Sum N 
-For Each Number in Numbers
-    N += Number
-Display N
+
+Sum = 0
+While NumberCount < 5
+  Input Number 
+  Sum += Number
+
+Display Sum
 End
 ```
 ---
