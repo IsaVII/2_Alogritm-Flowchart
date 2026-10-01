@@ -63,16 +63,15 @@ both.
 
 ```text
 START
-Sum = 0
-FOR i = 1 TO 3 STEP +1
-    INPUT Mark
-    Sum = Sum + Mark
-ENDFOR
+    Sum = 0
+    FOR i = 1 TO 3 STEP +1
+        INPUT Mark
+        Sum = Sum + Mark
+    ENDFOR
 
-Average = Sum / 3
-PRINT Sum
-PRINT Average
-
+    Average = Sum / 3
+    PRINT Sum
+    PRINT Average
 END
 ```
 
@@ -109,13 +108,11 @@ multiplication table from 1 to 10 using a loop.
 
 ```text
 START
- 
-INPUT Number
-FOR i = 1 TO 10 STEP +1
-    Product = Number * i
-    PRINT Product 
-ENDFOR
-
+    INPUT Number
+    FOR i = 1 TO 10 STEP +1
+        Product = Number * i
+        PRINT Product 
+    ENDFOR
 END
 ```
 
@@ -150,16 +147,14 @@ it is positive, negative, or zero.
 
 ```text
 START
-
-INPUT Number
-IF Number > 0
-    PRINT Positive
-ELSE IF Number < 0
-    PRINT Negative
-ELSE 
-    PRINT Zero
-ENDIF
-
+    INPUT Number
+    IF Number > 0
+        PRINT Positive
+    ELSE IF Number < 0
+        PRINT Negative
+    ELSE 
+        PRINT Zero
+    ENDIF
 END
 ```
 
@@ -204,12 +199,12 @@ interest using the formula:
 
 ```text
 START
-INPUT Money
-INPUT Percentage
-INPUT Years
+    INPUT Money
+    INPUT Percentage
+    INPUT Years
 
-Interest =  (Money * Percentage * Years) / 100
-OUTPUT Interest
+    Interest =  (Money * Percentage * Years) / 100
+    OUTPUT Interest
 END
 ```
 
@@ -242,14 +237,14 @@ temperature of 7 days, finds the average temperature, and displays it.
 
 ```text
 START
-Sum = 0
-FOR i = 1 TO 7  STEP +1
-    INPUT Temperature
-    Sum = Sum + Temperature
-ENDFOR
+    Sum = 0
+    FOR i = 1 TO 7  STEP +1
+        INPUT Temperature
+        Sum = Sum + Temperature
+    ENDFOR
 
-Average = Sum / 7
-PRINT Average
+    Average = Sum / 7
+    PRINT Average
 END
 ```
 
@@ -285,10 +280,10 @@ the area (**Area = Length × Width**), and display the result.
 
 ```text
 START
-INPUT Length
-INPUT Width
-Area = Length*Width
-PRINT Area
+    INPUT Length
+    INPUT Width
+    Area = Length*Width
+    PRINT Area
 END
 ```
 
@@ -320,12 +315,12 @@ otherwise **"Fail"**.
 
 ```text
 START
-INPUT Average
-IF Average >= 50
-    PRINT Pass
-ELSE
-    PRINT FAIL
-ENDIF
+    INPUT Average
+    IF Average >= 50
+        PRINT Pass
+    ELSE
+        PRINT FAIL
+    ENDIF
 END
 ```
 
@@ -357,14 +352,14 @@ calculate its factorial using a loop.
 
 ```text
 START
-INPUT Number
-Factorial = 1
+    INPUT Number
+    Factorial = 1
 
-FOR i = Number TO 1 STEP -1
-    Factorial = FACTORIAL * i
-ENDFOR
+    FOR i = Number TO 1 STEP -1
+        Factorial = FACTORIAL * i
+    ENDFOR
 
-OUTPUT Factorial
+    OUTPUT Factorial
 END 
 ```
 
@@ -401,12 +396,12 @@ than 1000.
 
 ```text
 START
-INPUT Amount
-IF Amount > 1000
-    Amount = Amount - Amount * 0.1
-ENDIF
+    INPUT Amount
+    IF Amount > 1000
+        Amount = Amount - Amount * 0.1
+    ENDIF
 
-OUTPUT Amount
+    OUTPUT Amount
 END
 ```
 
@@ -447,13 +442,12 @@ Applies"**.
 
 ```text
 START
-INPUT Amount
-IF Amount >= 500
-    PRINT Free Delivery
-ELSE
-    PRINT Delivery Charge Applies
-ENDIF
- 
+    INPUT Amount
+    IF Amount >= 500
+        PRINT Free Delivery
+    ELSE
+        PRINT Delivery Charge Applies
+    ENDIF
 END
  
 ```
@@ -492,20 +486,19 @@ others, then displays the bonus and total salary.
 
 ```text
 START
-INPUT Salary
-INPUT ServiceYears
-Rate = 0
+    INPUT Salary
+    INPUT ServiceYears
+    Rate = 0
 
-IF ServiceYears >= 5
-    Rate = 0.1
-ELSE
-    Rate = 0.05
-ENDIF
+    IF ServiceYears >= 5
+        Rate = 0.1
+    ELSE
+        Rate = 0.05
+    ENDIF
 
-Bonus = Rate * Salary
-TotalSalary = Salary + Bonus
-PRINT Bonus, TotalSalary
- 
+    Bonus = Rate * Salary
+    TotalSalary = Salary + Bonus
+    PRINT Bonus, TotalSalary
 END
 ```
 
@@ -544,7 +537,7 @@ has exceeded the limit or how much data remains.
 ### ✔ Pseudocode
 
 ```text
- 
+
 ```
 
 ### ✔ Flowchart
