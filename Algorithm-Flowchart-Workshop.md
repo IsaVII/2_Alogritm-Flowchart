@@ -465,10 +465,10 @@ flowchart TD
     A([START]):::term-->
     B[/INPUT Amount/]:::io
     B --> C{Amount >= 500}:::dec
-    C -->|Yes| D[/PRINT "Free Delivery"/]:::proc
+    C -->|Yes| D[/PRINT "Free Delivery"/]:::io
     D --> E([END]):::term
 
-    C -->|No| F[/PRINT "Delivery Charge Applies"/]:::proc
+    C -->|No| F[/PRINT "Delivery Charge Applies"/]:::io
     F --> E
     
   
@@ -491,10 +491,48 @@ others, then displays the bonus and total salary.
 ### ✔ Pseudocode
 
 ```text
+START
+INPUT Salary
+INPUT ServiceYears
+Rate = 0
+
+IF ServiceYears >= 5
+    Rate = 0.1
+ELSE
+    Rate = 0.05
+ENDIF
+
+Bonus = Rate * Salary
+TotalSalary = Salary + Bonus
+PRINT Bonus, TotalSalary
  
+END
 ```
 
 ### ✔ Flowchart
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Salary/]:::io
+    B --> C[/INPUT ServiceYears/]:::io
+    C --> D[Rate = 0]:::proc
+
+    D --> E{ServiceYears >= 5}:::dec
+    E -->|Yes| F[Rate = 0.1]:::proc
+    E -->|No| K[Rate = 0.05]:::proc
+
+    F --> G[Rate *= Salary]:::proc
+    K --> G
+    G --> H[TotalSalary = Salary + Bonus]:::proc
+    H --> I[/PRINT Bonus, TotalSalary/]:::io
+    I --> J([END]):::term
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
+
 ---
 
 ## 13. Mobile Data Usage Monitor
