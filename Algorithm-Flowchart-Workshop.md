@@ -503,6 +503,7 @@ END
 ```
 
 ### ✔ Flowchart
+
 ```mermaid
 flowchart TD
     A([START]):::term-->
@@ -537,10 +538,39 @@ has exceeded the limit or how much data remains.
 ### ✔ Pseudocode
 
 ```text
+START
+    INPUT Limit
+    INPUT Usage
 
+    IF Usage >= Limit
+        PRINT "Limit exceeded"
+    ELSE
+        Remaining = Limit - Usage
+        PRINT Remaining
+    ENDIF
+END
 ```
 
 ### ✔ Flowchart
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Limit/]:::io
+    B --> C[/INPUT Usage/]:::io
+
+    C --> D{Usage >= Limit}:::dec
+    D -->|Yes| E[/OUTPUT: "Limit exceeded"/]:::io
+    E --> F([END]):::term
+
+    D -->|No| G[Remaining = Limit - Usage]:::proc
+    G --> H[/OUTPUT: Remaining/]:::io
+    H --> F
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 
 ---
 
