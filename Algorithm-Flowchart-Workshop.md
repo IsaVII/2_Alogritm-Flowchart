@@ -88,7 +88,7 @@ flowchart TD
     E --> C
     
     C --> |No| F[Average=Sum/3]:::proc
-    F --> G[/OUTPUT Sum, Average/]:::io
+    F --> G[/PRINT Sum, Average/]:::io
     G-->H([END]):::term
   
   classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
@@ -127,12 +127,12 @@ END
 ```mermaid
 flowchart TD
     A([START]):::term-->
-       B[/INPUT Number/]:::io
-       B-->C[i = 1]:::proc
+    B[/INPUT Number/]:::io
+    B-->C[i = 1]:::proc
     C --> D{i <= 10?}:::dec
 
     D --> E[Product = Number*i, i++]:::proc
-    E --> F[/OUTPUT Product/]
+    E --> F[/PRINT Product/]
     F --> D
     D --> |No| G([END]):::term
   
@@ -155,42 +155,38 @@ it is positive, negative, or zero.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+
+INPUT Number
+IF Number > 0
+    PRINT Positive
+ELSE IF Number < 0
+    PRINT Negative
+ELSE 
+    PRINT Zero
+ENDIF
+
+END
 ```
 
 ### ✔ Flowchart
 
 ```mermaid
 flowchart TD
-    A([Start]):::term-->
-    B[/Input Park-Hours/]:::io
+    A([START]):::term-->
+    B[/INPUT Number/]:::io
+    B --> C{Number > 0?}:::dec
+    C-->|Yes| D[/PRINT Positive/]:::io
+    D --> E([END]):::term
 
-    B --> C{Park-Hours <= 1?}:::dec
-    C -- Yes --> D[Final Fee=0 kr]:::proc
-    D-->Out
-   
+    C-->|No| F{Number < 0}:::dec
+    F-->|Yes| G[/PRINT Negative/]:::io
+    G --> E
 
-    C -- No --> G{Park-Hours <= 3?}:::dec
-    G -- Yes --> H[Final Fee=50 kr]:::proc
-    H-->LC
-
-    G -- No --> J[Final Fee=
-    50 kr + /Hours-3/ * 40 kr]:::proc
-    J--> K{Final Fee > Daily Rate /250/}:::dec
-    K -- No --> LC
-    
-    K -- Yes --> L[Final Fee = Daily Rate]:::proc  
-    L --> LC[/Input Loyalty/]:::io
-    LC --> M{Loyalty?}:::dec
-    M-- Yes --> N[20% Discount]:::proc  
-
-     N --> Out[/Output Final Fee/]:::io
-     M -- No --> Out
-     Out --> End
+    F -->|No|H[/PRINT Zero/]:::io
+    H-->E
 
  
-    End([End]):::term 
-  
   classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
   classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
   classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
@@ -217,7 +213,9 @@ interest using the formula:
 ### ✔ Pseudocode
 
 ```text
- 
+START
+INPUT 
+END
 ```
 
 ### ✔ Flowchart
