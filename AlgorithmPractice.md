@@ -163,14 +163,14 @@ flowchart TD
 
     B --> C{Total >= 5000?}:::dec
     C -- Yes --> D[Discount 20%]:::proc
-    D-->F[/Output: Final Price/]:::io
-    F-->End
+    D-->calc
 
     C -- No --> G{Total >= 2000?}:::dec
     G -- Yes --> H[Discount 10%]:::proc
-    H-->F
+    H--> calc[Calc Final Price]:::proc
+    calc-->F
 
-    G -- No --> F
+    G -- No --> F[/Output: Final Price/]:::io
 
 
     End([End]):::term 
