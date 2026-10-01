@@ -552,6 +552,7 @@ END
 ```
 
 ### ✔ Flowchart
+
 ```mermaid
 flowchart TD
     A([START]):::term-->
@@ -584,10 +585,52 @@ Locked"** after 3 failed attempts.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+    INPUT Password
+    Attempts = 1
+    
+    WHILE Password NOT StoredPassword
+        IF Attempts >= 3
+            PRINT Account Locked
+            END
+        ENDIF
+
+        INPUT Password
+        Attempts = Attempts + 1
+    ENDWHILE
+
+    PRINT Access Granted
+END
 ```
 
 ### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Password/]:::io
+    B --> C[Attempts = 1]:::proc
+    C --> D{Password = StoredPassword?}:::dec
+
+    D --> |Yes| E[/PRINT "Access Granted"/]:::io
+    E --> F([END]):::term
+
+    D --> |No| G{Attempts = 3?}:::dec
+    G --> |Yes| H[/PRINT "Account Locked"/]:::io
+    H --> F
+
+    G --> |No|I[/INPUT Password/]:::io
+    I --> J[Attempts++]:::proc
+    J --> D
+   
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
+
+
 ---
 
 ## 15. Store Checkout with Multiple Items
