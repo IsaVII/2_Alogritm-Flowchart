@@ -648,7 +648,7 @@ START
     Total = 0
 
     FOR i = 1 TO Number STEP +1
-        INPUT Price // I assume the user needs to enter the price? Otherwise a loop makes no sense?
+        INPUT Price
         Total = Total + Price
     ENDFOR
 
