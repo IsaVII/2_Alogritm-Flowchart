@@ -64,7 +64,7 @@ both.
 ```text
 START
 Sum = 0
-FOR i = 1 TO 3
+FOR i = 1 TO 3 STEP +1
     INPUT Mark
     Sum = Sum + Mark
 ENDFOR
@@ -111,7 +111,7 @@ multiplication table from 1 to 10 using a loop.
 START
  
 INPUT Number
-FOR i = 1 TO 10
+FOR i = 1 TO 10 STEP +1
     Product = Number * i
     PRINT Product 
 ENDFOR
@@ -243,7 +243,7 @@ temperature of 7 days, finds the average temperature, and displays it.
 ```text
 START
 Sum = 0
-FOR i = 1 TO 7
+FOR i = 1 TO 7  STEP +1
     INPUT Temperature
     Sum = Sum + Temperature
 ENDFOR
@@ -355,6 +355,40 @@ flowchart TD
 Write the algorithm and draw the flowchart that input a number and
 calculate its factorial using a loop.
 
+```text
+START
+INPUT Number
+Factorial = 1
+
+FOR i = Number TO 1 STEP -1
+    Factorial = FACTORIAL * i
+ENDFOR
+
+OUTPUT Factorial
+END 
+```
+
+### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Number/]:::io
+    B --> C[Factorial = 1, i = Number]:::proc
+    C --> D{i >= 1?}:::dec
+    D -->|Yes| E[Factorial *= i, i--]:::proc
+    E --> D
+
+    D -->|No| F[/OUTPUT Factorial/]:::io
+    F --> G([END]):::term
+  
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
+
 ---
 
 ## 10. Calculate Discount on Purchase
@@ -366,13 +400,39 @@ than 1000.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+INPUT Amount
+IF Amount > 1000
+    Amount = Amount - Amount * 0.1
+ENDIF
+
+OUTPUT Amount
+END
 ```
 
 ### ✔ Flowchart
 
----
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Amount/]:::io
+    B --> C{Amount > 1000}:::dec
+    C -->|Yes| D["Apply Discount:
+    Amount -= Amount * 0.1"]:::proc
+    D --> E[/OUTPUT Amount/]:::io
 
+    C -->|No| E
+    E --> F([END]):::term
+    
+  
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
+
+---
 
 ## Optional Exercises (11–16)
 
