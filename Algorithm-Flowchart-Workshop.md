@@ -703,9 +703,45 @@ units at 2.0 SEK per unit, and all remaining units at 3.0 SEK per unit.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+    INPUT Units
+
+    IF Units <= 100
+        Bill = Units * 1.5
+    ELSE IF Units <= 300
+        Bill = (100 * 1.5) + (Units - 100) * 2.0
+    ELSE
+        Bill = (100 * 1.5) + (200 * 2.0) + (Units - 300) * 3.0
+    ENDIF
+
+    OUTPUT Bill
+END
 ```
 
 ### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Units/]:::io
+    B --> C[Bill = 0]:::proc
+    C --> D{Units <= 100}:::dec
+
+    D --> |Yes| E[Bill = Units * 1.5]:::proc
+    E --> F[/OUTPUT Bill/]:::proc
+    F --> G([END]):::term
+
+    D --> |No| H{Units <= 300}:::dec
+    H --> |Yes| I["Bill = (100 * 1.5) + (Units - 100) * 2.0"]:::proc
+    I --> F
+
+    H --> |No| J["Bill = (100 * 1.5) + (200 * 2.0) + (Units - 300) * 3.0"]:::proc
+    J --> F
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 
 ---
