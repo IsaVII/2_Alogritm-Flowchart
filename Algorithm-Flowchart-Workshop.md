@@ -641,11 +641,55 @@ loop, and applies a **15% discount** if the total exceeds 5000 SEK.
 
 ### ✔ Pseudocode
 
+ 
 ```text
+START
+    INPUT Number
+    Total = 0
+
+    FOR i = 1 TO Number STEP +1
+        INPUT Price // I assume the user needs to enter the price? Otherwise a loop makes no sense?
+        Total = Total + Price
+    ENDFOR
+
+    Discount = 0
+    IF Total > 5000
+        Discount = Total * 0.15
+    ENDIF
+
+    FinalAmount = Total - Discount
+    PRINT Total, Discount, FinalAmount
+END
+     
  
 ```
 
 ### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Number/]:::io
+    B --> C[Total = 0, i = 1]:::proc
+    C --> D{i <= Number}:::dec
+
+    D --> |Yes| E[/INPUT Price/]:::io
+    E --> F[Total += Price, i++]:::proc
+    F --> D
+
+    D --> |No| G[Discount = 0]:::proc
+    G --> H{Total > 5000}:::dec
+    H --> |No| J
+    H --> |Yes| I[Discount = Total * 0.15]:::proc
+    I --> J[FinalAmount = Total - Discount]:::proc
+    J --> K[/PRINT Total, Discount, FinalAmount/]:::io
+    K --> L([END]):::term
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 
 ---
 
