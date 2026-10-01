@@ -91,14 +91,11 @@ flowchart TD
     F --> G[/PRINT Sum, Average/]:::io
     G-->H([END]):::term
   
+ 
   classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
   classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
   classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
   classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
-  classDef pre fill:#ede7f6,stroke:#b39ddb,color:#333,stroke-width:1px;
-  classDef conn fill:#f5f5f5,stroke:#bdbdbd,color:#333,stroke-width:1px;
-  classDef hide fill:none,stroke:none,color:none;
-  classDef label fill:none,stroke:none,color:#333,text-align:center;
 ```
 
 ---
@@ -136,14 +133,11 @@ flowchart TD
     F --> D
     D --> |No| G([END]):::term
   
+ 
   classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
   classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
   classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
   classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
-  classDef pre fill:#ede7f6,stroke:#b39ddb,color:#333,stroke-width:1px;
-  classDef conn fill:#f5f5f5,stroke:#bdbdbd,color:#333,stroke-width:1px;
-  classDef hide fill:none,stroke:none,color:none;
-  classDef label fill:none,stroke:none,color:#333,text-align:center;
 ```
 ---
 
@@ -191,10 +185,6 @@ flowchart TD
   classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
   classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
   classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
-  classDef pre fill:#ede7f6,stroke:#b39ddb,color:#333,stroke-width:1px;
-  classDef conn fill:#f5f5f5,stroke:#bdbdbd,color:#333,stroke-width:1px;
-  classDef hide fill:none,stroke:none,color:none;
-  classDef label fill:none,stroke:none,color:#333,text-align:center;
 ```
 
 ---
@@ -214,13 +204,32 @@ interest using the formula:
 
 ```text
 START
-INPUT 
+INPUT Money
+INPUT Percentage
+INPUT Years
+
+Interest =  (Money * Percentage * Years) / 100
+OUTPUT Interest
 END
 ```
 
 ### ✔ Flowchart
 
-
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Money/]:::io
+    B --> C[/INPUT Percentage/]:::io
+    C --> D[/INPUT Years/]:::io
+    D --> E["Interest = (Money * Percentage * Years) / 100"]:::proc
+    E --> F[/PRINT Interest/]:::io
+    F --> G([END]):::term
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 
 ---
 
