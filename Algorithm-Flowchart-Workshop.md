@@ -319,10 +319,35 @@ otherwise **"Fail"**.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+INPUT Average
+IF Average >= 50
+    PRINT Pass
+ELSE
+    PRINT FAIL
+ENDIF
+END
 ```
 
 ### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Average/]:::io
+    B --> C{Average >= 50?}:::dec
+    C -->|Yes| D[/PRINT "Pass"/]:::io
+    D --> E([END]):::term
+
+    C-->|No| F[/PRINT "Fail"/]:::io
+    F --> E
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
+
 ---
 
 ## 9. Calculate Factorial of a Number
