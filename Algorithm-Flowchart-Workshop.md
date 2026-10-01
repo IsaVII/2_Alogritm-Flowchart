@@ -81,8 +81,8 @@ END
 ```mermaid
 flowchart TD
     A([START]):::term-->
-    B[Sum = 0, i = 0]:::proc
-    B --> C{i < 3?}:::dec
+    B[Sum = 0, i = 1]:::proc
+    B --> C{i <= 3?}:::dec
     C --> |Yes| D[/INPUT Mark/]:::io
     D --> E[Sum += Mark, i++]:::proc
     E --> C
@@ -111,12 +111,40 @@ multiplication table from 1 to 10 using a loop.
 ### ✔ Pseudocode
 
 ```text
+START
  
+INPUT Number
+FOR i = 1 TO 10
+    Product = Number * i
+    PRINT Product 
+ENDFOR
+
+END
 ```
 
 ### ✔ Flowchart
 
+```mermaid
+flowchart TD
+    A([START]):::term-->
+       B[/INPUT Number/]:::io
+       B-->C[i = 1]:::proc
+    C --> D{i <= 10?}:::dec
 
+    D --> E[Product = Number*i, i++]:::proc
+    E --> F[/OUTPUT Product/]
+    F --> D
+    D --> |No| G([END]):::term
+  
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+  classDef pre fill:#ede7f6,stroke:#b39ddb,color:#333,stroke-width:1px;
+  classDef conn fill:#f5f5f5,stroke:#bdbdbd,color:#333,stroke-width:1px;
+  classDef hide fill:none,stroke:none,color:none;
+  classDef label fill:none,stroke:none,color:#333,text-align:center;
+```
 ---
 
 ## 4. Positive, Negative, or Zero Check
