@@ -241,11 +241,40 @@ temperature of 7 days, finds the average temperature, and displays it.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+Sum = 0
+FOR i = 1 TO 7
+    INPUT Temperature
+    Sum = Sum + Temperature
+ENDFOR
+
+Average = Sum / 7
+PRINT Average
+
+END
 ```
 
 ### ✔ Flowchart
 
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[Sum = 0, i = 1]:::proc
+    B --> C{i <= 7?}:::dec
+    C --> |Yes| D[/INPUT Temperature/]:::io
+    D --> E[Sum += Temperature, i++]:::proc
+    E --> C
+    
+    C --> |No| F[Average=Sum/7]:::proc
+    F --> G[/PRINT Average/]:::io
+    G-->H([END]):::term
+  
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 ---
 
 ## 7. Calculate Area of a Rectangle
