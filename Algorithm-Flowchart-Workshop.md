@@ -250,7 +250,6 @@ ENDFOR
 
 Average = Sum / 7
 PRINT Average
-
 END
 ```
 
@@ -285,11 +284,30 @@ the area (**Area = Length × Width**), and display the result.
 ### ✔ Pseudocode
 
 ```text
- 
+START
+INPUT Length
+INPUT Width
+Area = Length*Width
+PRINT Area
+END
 ```
 
 ### ✔ Flowchart
 
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Length/]:::io
+    B --> C[/INPUT Width/]:::io
+    C --> D[Area = Length * Width]:::proc
+    D --> E[/PRINT Area/]:::io
+    E --> F([END]):::term
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 ---
 
 ## 8. Determine Pass or Fail
