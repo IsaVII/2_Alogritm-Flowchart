@@ -446,10 +446,38 @@ Applies"**.
 ### ✔ Pseudocode
 
 ```text
+START
+INPUT Amount
+IF Amount >= 500
+    PRINT Free Delivery
+ELSE
+    PRINT Delivery Charge Applies
+ENDIF
+ 
+END
  
 ```
 
 ### ✔ Flowchart
+
+```mermaid
+flowchart TD
+    A([START]):::term-->
+    B[/INPUT Amount/]:::io
+    B --> C{Amount >= 500}:::dec
+    C -->|Yes| D[/PRINT "Free Delivery"/]:::proc
+    D --> E([END]):::term
+
+    C -->|No| F[/PRINT "Delivery Charge Applies"/]:::proc
+    F --> E
+    
+  
+ 
+  classDef term fill:#e3f2fd,stroke:#90caf9,color:#333,stroke-width:1px;
+  classDef io fill:#fff3e0,stroke:#ffcc80,color:#333,stroke-width:1px;
+  classDef proc fill:#e8f5e9,stroke:#a5d6a7,color:#333,stroke-width:1px;
+  classDef dec fill:#fde0dc,stroke:#f8bbd0,color:#333,stroke-width:1px;
+```
 
 ---
 
